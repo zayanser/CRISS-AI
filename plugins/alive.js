@@ -24,8 +24,8 @@ const alive = async (m, Matrix) => {
       forwardingScore: `https://whatsapp.com/channel/0029Vb0HIV2G3R3s2II4181g`,
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
-        newsletterJid: '120363398040175935@newsletter',
-        newsletterName: "JawadTechX",
+        newsletterJid: 'https://whatsapp.com/channel/0029Vb0HIV2G3R3s2II4181g',
+        newsletterName: "CrissMdSupport",
         serverMessageId: 143
       }
     }
