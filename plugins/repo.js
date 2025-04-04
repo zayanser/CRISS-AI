@@ -6,7 +6,7 @@ const repo = async (m, gss) => {
   const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(" ")[0].toLowerCase() : "";
 
   if (["repo", "sc", "script", "info"].includes(cmd)) {
-    const githubRepoURL = "https://github.com/XdTechPro/JAWAD-MD";
+    const githubRepoURL = "https://github.com/criss-vevo/CRISS-AI";
 
     try {
       // Extract username and repo name from the URL
@@ -28,7 +28,7 @@ const repo = async (m, gss) => {
       await gss.sendMessage(
         m.from,
         {
-          image: { url: "https://files.catbox.moe/juroe8.jpg" },
+          image: { url: "https://files.catbox.moe/y3yie0.jpg" },
           caption: formattedInfo,
           contextInfo: {
             mentionedJid: [m.sender],
