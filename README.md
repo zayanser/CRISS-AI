@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/criss-vevo">
-    <img alt="criss-vevo logo" height="350" width="200" src="https://files.catbox.moe/y3yie0.jpg">
+    <img alt="criss-vevo logo" height="350" width="420" src="https://files.catbox.moe/y3yie0.jpg">
   </a>
 </p>
 
