@@ -1,9 +1,9 @@
-🌟 CLOUD AI 🌟
+🌟 𝗖𝗥𝗜𝗦𝗦 𝗔𝗜 🌟
 
 <p align="center">
-  <img src="https://files.catbox.moe/7jt69h.jpg" width="500"/>
+  <img src="https://files.catbox.moe/y3yie0.jpg" width="500"/>
 </p>
----
+
 
 📌 Instructions To the Users
 
