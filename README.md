@@ -47,7 +47,7 @@ This bot is a none prefix bot. For you to access the bot menu just type the word
 
 🚀 Deploy on Heroku
 
-💜 Deploy CLOUD AI on Heroku with one click:
+💜 Deploy CRISS AI on Heroku with one click:
 
 <p align="center">
   <a href="https://bera-tech-server.vercel.app" target="_blank">
