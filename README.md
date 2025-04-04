@@ -7,9 +7,7 @@
 
 📌 Instructions To the Users
 
-This bot is a none prefix bot. For you to access the bot menu just type the word menu do not start with a prefix for example .menu✖️
-
-menu✅
+This bot is a none prefix bot. For you to access the bot menu just type the word menu do not start with a prefix for example .menu✖️     menu✅
 
 
 ---
