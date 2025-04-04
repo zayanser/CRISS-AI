@@ -21,7 +21,7 @@ const alive = async (m, Matrix) => {
     caption: str,
     contextInfo: {
       mentionedJid: [m.sender],
-      forwardingScore: 999,
+      forwardingScore: `https://whatsapp.com/channel/0029Vb0HIV2G3R3s2II4181g`,
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
         newsletterJid: '120363398040175935@newsletter',
