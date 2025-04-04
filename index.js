@@ -114,24 +114,22 @@ Matrix.ev.on('connection.update', (update) => {
         }
     } else if (connection === 'open') {
         if (initialConnection) {
-            console.log(chalk.green("Connected Successfully cloud Ai 🤍"));
+            console.log(chalk.green("CRISS AI Connected Successfully 🤍"));
             Matrix.sendMessage(Matrix.user.id, { 
-                image: { url: "https://files.catbox.moe/y3yie0.jpg" }, 
+                image: { url: "https://files.catbox.moe/gs8gi2.jpg" }, 
                 caption: `*Hello there User! 👋🏻* 
-
-> Simple, Straightforward, But Loaded With Features 🎊. Meet CRISS-AI WhatsApp Bot.
 
 *Thanks for using CRISS AI 🚩* 
 
-> Join WhatsApp Channel: ⤵️  
-https://whatsapp.com/channel/0029Vb0HIV2G3R3s2II4181g
+*Join WhatsApp Channel: ⤵️* 
+https://shorturl.at/1h1eS
 
 - *YOUR PREFIX:* = ${prefix}
 
-Don't forget to give a star to the repo ⬇️  
-https://github.com/criss-vevo/CRISS-AI
+*please give a star to the repo ⬇️* 
+https://shorturl.at/bppoX
 
-> © REGARDS CRISS`
+𝗣𝗢𝗪𝗘𝗥𝗘𝗗 𝗕𝗬 𝗖𝗥𝗜𝗦𝗦 𝗩𝗘𝗩𝗢`
             });
             initialConnection = false;
         } else {
