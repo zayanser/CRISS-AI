@@ -1,4 +1,4 @@
-                                    🌟 𝗖𝗥𝗜𝗦𝗦 𝗔𝗜 🌟
+                  🌟 𝗖𝗥𝗜𝗦𝗦 𝗔𝗜 🌟
 
 <p align="center">
   <img src="https://files.catbox.moe/y3yie0.jpg" width="500"/>
