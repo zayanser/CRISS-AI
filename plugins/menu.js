@@ -94,7 +94,7 @@ const menu = async (m, Matrix) => {
 ┃◈┃• 7. Main Menu
 ┃◈┃• 8. Owner Menu 
 ┃◈┃• 9. Stalk Menu     
-┃◈┃• update
+┃◈┃•  .update
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
 > *Reply with the number (1-9)*`;
