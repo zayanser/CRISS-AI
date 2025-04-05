@@ -28,7 +28,7 @@ const facebook = async (m, Matrix) => {
       return Matrix.sendMessage(m.from, { text: "⚠️ *No downloadable video found.*" }, { quoted: m });
     }
 
-    const caption = `📹 *Facebook Video*\n\n🎬 *Title:* ${title}\n📥 *Quality:* ${bestQuality.quality}\n\n🔗 *Powered By CrissTechX ✅*`;
+    const caption = `📹 *Facebook Video*\n\n🎬 *Title:* ${title}\n📥 *Quality:* ${bestQuality.quality}\n\n🔗 *Powered By CRISS AI*`;
 
     await Matrix.sendMessage(m.from, {
       video: { url: bestQuality.downloadUrl },
@@ -39,8 +39,8 @@ const facebook = async (m, Matrix) => {
         forwardingScore: 999,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-          newsletterJid: "120363354023106228@newsletter",
-          newsletterName: "CrissTechX",
+          newsletterJid: "120363378608564635@newsletter",
+          newsletterName: "CRISS AI SUPPORT",
           serverMessageId: 144,
         },
       },
