@@ -13,7 +13,7 @@ const song = async (m, gss) => {
     }
 
     const searchQuery = args.join(" ");
-    m.reply("*🎥 Searching for the video...*");
+    m.reply("*CRISS-AI 🎬 Searching for the video...*");
 
     try {
       const searchResults = await yts(searchQuery);
@@ -40,7 +40,7 @@ const song = async (m, gss) => {
         {
           video: { url: download_url },
           mimetype: "video/mp4",
-          caption: `*${title}*\n\nPowered By JawadTechX 💜`,
+          caption: `*${title}*\n\n*POWERED BY CRISS AI*`,
         },
         { quoted: m }
       );
