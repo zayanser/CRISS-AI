@@ -6,7 +6,7 @@
 
 
 
-<a href="https://github.com/criss-vevo/CRISS-AI/fork"><img src="https://img.shields.io/badge/Fork%20%20code-white" alt="𝐅𝐨𝐫𝐤" width="300"></a>
+<a href="https://github.com/criss-vevo/CRISS-AI/fork"><img src="https://img.shields.io/badge/Fork%20Repo%20code-white" alt="𝐅𝐨𝐫𝐤" width="300"></a>
 
 
  
