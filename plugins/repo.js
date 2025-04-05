@@ -22,21 +22,21 @@ const repo = async (m, gss) => {
       const repoData = response.data;
 
       // Format the repository information
-      const formattedInfo = `*BOT NAME:*\n> ${repoData.name}\n\n*OWNER NAME:*\n> ${repoData.owner.login}\n\n*STARS:*\n> ${repoData.stargazers_count}\n\n*FORKS:*\n> ${repoData.forks_count}\n\n*GITHUB LINK:*\n> ${repoData.html_url}\n\n*DESCRIPTION:*\n> ${repoData.description || "No description"}\n\n*Don't Forget To Star and Fork Repository*\n\n> *© Powered By JawadTechX 🖤*`;
+      const formattedInfo = `*BOT NAME:*\n> ${repoData.name}\n\n*OWNER NAME:*\n> ${repoData.owner.login}\n\n*STARS:*\n> ${repoData.stargazers_count}\n\n*FORKS:*\n> ${repoData.forks_count}\n\n*GITHUB LINK:*\n> ${repoData.html_url}\n\n*DESCRIPTION:*\n> ${repoData.description || "No description"}\n\n*Don't Forget To Star and Fork Repository*\n\n> *© Powered By CRISS VEVO*`;
 
       // Send an image with the formatted info as a caption
       await gss.sendMessage(
         m.from,
         {
-          image: { url: "https://files.catbox.moe/y3yie0.jpg" },
+          image: { url: "https://files.catbox.moe/gs8gi2.jpg" },
           caption: formattedInfo,
           contextInfo: {
             mentionedJid: [m.sender],
             forwardingScore: 999,
             isForwarded: true,
             forwardedNewsletterMessageInfo: {
-              newsletterJid: "120363354023106228@newsletter",
-              newsletterName: "JawadTechX",
+              newsletterJid: "120363378608564635@newsletter",
+              newsletterName: "CRISS AI SUPPORT",
               serverMessageId: 143,
             },
           },
@@ -49,15 +49,15 @@ const repo = async (m, gss) => {
         m.from,
         {
           audio: { url: "https://github.com/XdTechPro/KHAN-DATA/raw/refs/heads/main/autovoice/menunew.m4a" },
-          mimetype: "audio/mp4",
+          mimetype: "audio/mp3",
           ptt: true,
           contextInfo: {
             mentionedJid: [m.sender],
             forwardingScore: 999,
             isForwarded: true,
             forwardedNewsletterMessageInfo: {
-              newsletterJid: "120363354023106228@newsletter",
-              newsletterName: "JawadTechX",
+              newsletterJid: "120363378608564635@newsletter",
+              newsletterName: "CRISS AI SUPPORT",
               serverMessageId: 143,
             },
           },
