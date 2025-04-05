@@ -23,7 +23,7 @@ const tiktok = async (m, Matrix) => {
 
     const { desc, author, statistics, video, music } = data.result;
 
-    const caption = `🎵 *TikTok Video*\n\n💬 *${desc}*\n👤 *By:* ${author.nickname}\n❤️ *Likes:* ${statistics.likeCount}\n💬 *Comments:* ${statistics.commentCount}\n🔄 *Shares:* ${statistics.shareCount}\n\n📥 *Powered By JawadTechX ✅*`;
+    const caption = `🎵 *TikTok Video*\n\n💬 *${desc}*\n👤 *By:* ${author.nickname}\n❤️ *Likes:* ${statistics.likeCount}\n💬 *Comments:* ${statistics.commentCount}\n🔄 *Shares:* ${statistics.shareCount}\n\n📥 *Powered By CRISS AI ✅*`;
 
     await Matrix.sendMessage(m.from, {
       video: { url: video },
@@ -34,8 +34,8 @@ const tiktok = async (m, Matrix) => {
         forwardingScore: 999,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-          newsletterJid: "120363354023106228@newsletter",
-          newsletterName: "JawadTechX",
+          newsletterJid: "120363378608564635@newsletter",
+          newsletterName: "CRISS AI SUPPORT",
           serverMessageId: 143,
         },
       },
