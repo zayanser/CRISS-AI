@@ -17,6 +17,11 @@
       "required": true,
       "value": "public"
     },
+    "PREFIX": {
+      "description": "paste your bot prefix note! Don't apply null prefix.",
+      "required": false,
+      "value": "."
+    },
     "OWNER_NAME": {
       "description": "Your name as the bot owner",
       "required": true,
