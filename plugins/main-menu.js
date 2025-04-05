@@ -234,8 +234,8 @@ const menu = async (m, Matrix) => {
         forwardingScore: 999,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-          newsletterJid: '120363398040175935@newsletter',
-          newsletterName: "CrissTechX",
+          newsletterJid: '120363378608564635@newsletter',
+          newsletterName: "CRISS AI SUPPORT",
           serverMessageId: 143
         }
       }
