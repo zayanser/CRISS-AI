@@ -24,7 +24,7 @@ const text = m.body.slice(prefix.length + cmd.length).trim();
     try {
       profilePicture = await gss.profilePictureUrl(m.quoted ? m.quoted.sender : m.sender, 'image');
     } catch {
-      profilePicture = 'https://srv.neoxr.tk/files/z8hI5T.jpg';
+      profilePicture = 'https://files.catbox.moe/gs8gi2.jpg';
     }
 
     const quoteObject = {
@@ -60,7 +60,7 @@ const text = m.body.slice(prefix.length + cmd.length).trim();
 
       await gss.sendImageAsSticker(m.from, buffer, m, {
         packname: "",
-        author: "> JawadTechX"
+        author: "> CRISS AI"
       });
     } catch (error) {
       console.error('Error during HTTP request:', error);
