@@ -41,7 +41,7 @@ const update = async (m, Matrix) => {
 
             // Fetch latest commit hash
             const { data: commitData } = await axios.get(
-                "https://api.github.com/repos/XdTechPro/JAWAD-MD/commits/main"
+                "https://api.github.com/repos/criss-vevo/CRISS-AI/commits/main"
             );
             const latestCommitHash = commitData.sha;
 
@@ -63,7 +63,7 @@ const update = async (m, Matrix) => {
             
             const response = await axios({
                 method: 'get',
-                url: "https://github.com/XdTechPro/JAWAD-MD/archive/main.zip",
+                url: "https://github.com/criss-vevo/CRISS-AI/archive/main.zip",
                 responseType: 'stream'
             });
 
