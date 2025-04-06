@@ -22,6 +22,11 @@
       "required": false,
       "value": "."
     },
+      "AUTO_STATUS_REACT": {
+      "description": "make it true for automatic status reaction or like.",
+      "required": true,
+      "value": "true"
+    }, 
     "OWNER_NAME": {
       "description": "Your name as the bot owner",
       "required": true,
