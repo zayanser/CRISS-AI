@@ -56,7 +56,7 @@ async function downloadSessionData() {
         return false;
     }
 
-    const sessdata = config.SESSION_ID.split("CLOUD-AI~")[1];
+    const sessdata = config.SESSION_ID.split("CRISS-AI~")[1];
 
     if (!sessdata || !sessdata.includes("#")) {
         console.error('❌ Invalid SESSION_ID format! It must contain both file ID and decryption key.');
@@ -89,20 +89,20 @@ async function start() {
     try {
         const { state, saveCreds } = await useMultiFileAuthState(sessionDir);
         const { version, isLatest } = await fetchLatestBaileysVersion();
-        console.log(`🤖 JAWAD-MD using WA v${version.join('.')}, isLatest: ${isLatest}`);
+        console.log(`🤖 CRISS-AI using WA v${version.join('.')}, isLatest: ${isLatest}`);
         
         const Matrix = makeWASocket({
             version,
             logger: pino({ level: 'silent' }),
             printQRInTerminal: useQR,
-            browser: ["JAWAD-MD", "safari", "3.3"],
+            browser: ["CRISS-AI", "safari", "3.3"],
             auth: state,
             getMessage: async (key) => {
                 if (store) {
                     const msg = await store.loadMessage(key.remoteJid, key.id);
                     return msg.message || undefined;
                 }
-                return { conversation: " cloid ai whatsapp user bot" };
+                return { conversation: " criss ai whatsapp user bot" };
             }
         });
 
@@ -114,24 +114,22 @@ Matrix.ev.on('connection.update', (update) => {
         }
     } else if (connection === 'open') {
         if (initialConnection) {
-            console.log(chalk.green("Connected Successfully cloud Ai 🤍"));
+            console.log(chalk.green("CRISS AI Connected Successfully 🤍"));
             Matrix.sendMessage(Matrix.user.id, { 
-                image: { url: "https://files.catbox.moe/pf270b.jpg" }, 
+                image: { url: "https://files.catbox.moe/gs8gi2.jpg" }, 
                 caption: `*Hello there User! 👋🏻* 
 
-> Simple, Straightforward, But Loaded With Features 🎊. Meet CLOUD-AI WhatsApp Bot.
+*Thanks for using CRISS AI 🚩* 
 
-*Thanks for using CLOUD AI 🚩* 
-
-> Join WhatsApp Channel: ⤵️  
-https://whatsapp.com/channel/0029VajJoCoLI8YePbpsnE3q
+*Join WhatsApp Channel: ⤵️* 
+https://shorturl.at/1h1eS
 
 - *YOUR PREFIX:* = ${prefix}
 
-Don't forget to give a star to the repo ⬇️  
-https://github.com/DEVELOPER-BERA/CLOUD-AI
+*please give a star to the repo ⬇️* 
+https://shorturl.at/bppoX
 
-> © REGARDS BERA`
+𝗣𝗢𝗪𝗘𝗥𝗘𝗗 𝗕𝗬 𝗖𝗥𝗜𝗦𝗦 𝗩𝗘𝗩𝗢`
             });
             initialConnection = false;
         } else {
@@ -179,7 +177,7 @@ https://github.com/DEVELOPER-BERA/CLOUD-AI
             await Matrix.readMessages([mek.key]);
             
             if (config.AUTO_STATUS_REPLY) {
-                const customMessage = config.STATUS_READ_MSG || '✅ Auto Status Seen Bot By JAWAD-MD';
+                const customMessage = config.STATUS_READ_MSG || '✅ Auto Status Seen Bot By CRISS-AI';
                 await Matrix.sendMessage(fromJid, { text: customMessage }, { quoted: mek });
             }
         }
