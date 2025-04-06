@@ -1,4 +1,4 @@
-<p align="center">
+<p align="left">
   <a href="https://github.com/criss-vevo">
     <img alt="criss-vevo logo" height="300" width="350" src="https://files.catbox.moe/gs8gi2.jpg">
   </a>
