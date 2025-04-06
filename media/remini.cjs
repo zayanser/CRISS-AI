@@ -1,4 +1,4 @@
-//KHAN-MD-V1
+//CRISS-AI
 
 const FormData = require("form-data");
 async function remini(_0x33b965, _0x34eff3) {
