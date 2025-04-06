@@ -1,4 +1,358 @@
+import moment from 'moment-timezone';
+import fs from 'fs';
+import os from 'os';
+import pkg from '@whiskeysockets/baileys';
+const { generateWAMessageFromContent, proto } = pkg;
+import config from '../config.cjs';
+import axios from 'axios';
 
+// Get total memory and free memory in bytes
+const totalMemoryBytes = os.totalmem();
+const freeMemoryBytes = os.freemem();
 
-// created by criss vevo
-const _0x2f4606=_0x4020;function _0x1f68(){const _0xdf2410=['YGWKZ','AI\x20Menu','*\x0a┃★│\x20Platform\x20:\x20*','from','OWNER_NAME','Group\x20Menu','floor','message','MODE','\x0a╭━━〔\x20*AI\x20Menu*\x20〕━━┈⊷\x0a┃◈╭─────────────·๏\x0a┃◈┃•\x20ai\x0a┃◈┃•\x20bug\x0a┃◈┃•\x20report\x0a┃◈┃•\x20gpt\x0a┃◈┃•\x20dalle\x0a┃◈┃•\x20remini\x0a┃◈┃•\x20gemini\x0a┃◈└───────────┈⊷\x0a╰──────────────┈⊷','pushName','totalmem','sender','ilxXh','1396000NFkHDw','\x20-\x20','219546GOiYBj','split','56960JVtnZy','PREFIX','length','2107455TTvEGB','jiYOP','172512uwLyrC','*\x0a┃★│•\x20Prefix\x20:\x20[','8MgHSkJ','*\x0a┃★│\x20User\x20:\x20*',']\x0a┃★│\x20Version\x20:\x20*3.1.0*\x0a┃★╰──────────────\x0a╰━━━━━━━━━━━━━━━┈⊷\x0a\x0a>\x20','Main\x20Menu','\x0a╭━━〔\x20*Download\x20Menu*\x20〕━━┈⊷\x0a┃◈╭─────────────·๏\x0a┃◈┃•\x20apk\x0a┃◈┃•\x20facebook\x0a┃◈┃•\x20mediafire\x0a┃◈┃•\x20pinterestdl\x0a┃◈┃•\x20gitclone\x0a┃◈┃•\x20gdrive\x0a┃◈┃•\x20insta\x0a┃◈┃•\x20ytmp3\x0a┃◈┃•\x20ytmp4\x0a┃◈┃•\x20play\x0a┃◈┃•\x20song\x0a┃◈┃•\x20video\x0a┃◈┃•\x20ytmp3doc\x0a┃◈┃•\x20ytmp4doc\x0a┃◈┃•\x20tiktok\x0a┃◈└───────────┈⊷\x0a╰──────────────┈⊷','*I\x20am\x20alive\x20now\x20since\x20','extendedTextMessage','CRISS\x20AI\x20SUPPORT','McCnJ','menu','platform','Owner\x20Menu','sendMessage','includes','rBkOk','stanzaId','DGgoB','05:00:00','OLoJM','\x20MB','\x0a╭━━〔\x20*Group\x20Menu*\x20〕━━┈⊷\x0a┃◈╭─────────────·๏\x0a┃◈┃•\x20linkgroup\x0a┃◈┃•\x20setppgc\x0a┃◈┃•\x20setname\x0a┃◈┃•\x20setdesc\x0a┃◈┃•\x20group\x0a┃◈┃•\x20gcsetting\x0a┃◈┃•\x20welcome\x0a┃◈┃•\x20add\x0a┃◈┃•\x20kick\x0a┃◈┃•\x20hidetag\x0a┃◈┃•\x20tagall\x0a┃◈┃•\x20antilink\x0a┃◈┃•\x20antitoxic\x0a┃◈┃•\x20promote\x0a┃◈┃•\x20demote\x0a┃◈┃•\x20getbio\x0a┃◈└───────────┈⊷\x0a╰──────────────┈⊷','body','\x20Hour*\x0a*⏰\x20','9386410XVUrWS','\x0a\x0a>\x20*','toFixed','wciUL','\x20Day*\x0a*🕐\x20','HH:mm:ss','https://github.com/XdTechPro/KHAN-DATA/raw/refs/heads/main/autovoice/menunew.m4a','\x20KB','Good\x20Evening\x20🌃','format','dhFjJ','*\x0a┃★│\x20Baileys\x20:\x20*Multi\x20Device*\x0a┃★│\x20Type\x20:\x20*NodeJs*\x0a┃★│\x20Mode\x20:\x20*','get','pow','hOPoc','\x0a╭━━━〔\x20*','HYHRw','\x0a╭━━〔\x20*Converter\x20Menu*\x20〕━━┈⊷\x0a┃◈╭─────────────·๏\x0a┃◈┃•\x20attp\x0a┃◈┃•\x20attp2\x0a┃◈┃•\x20attp3\x0a┃◈┃•\x20ebinary\x0a┃◈┃•\x20dbinary\x0a┃◈┃•\x20emojimix\x0a┃◈┃•\x20mp3\x0a┃◈└───────────┈⊷\x0a╰──────────────┈⊷','data','78rIzgyT','Invalid\x20Choice','Asia/Colombo','fpGHf','\x0a╭━━〔\x20*Search\x20Menu*\x20〕━━┈⊷\x0a┃◈╭─────────────·๏\x0a┃◈┃•\x20play\x0a┃◈┃•\x20yts\x0a┃◈┃•\x20imdb\x0a┃◈┃•\x20google\x0a┃◈┃•\x20gimage\x0a┃◈┃•\x20pinterest\x0a┃◈┃•\x20wallpaper\x0a┃◈┃•\x20wikimedia\x0a┃◈┃•\x20ytsearch\x0a┃◈┃•\x20ringtone\x0a┃◈┃•\x20lyrics\x0a┃◈└───────────┈⊷\x0a╰──────────────┈⊷','binary','\x20bytes','Tools\x20Menu','MENU_IMAGE','9xRCRgE','\x20Minutes*\x0a*⏱️\x20','Good\x20Morning\x20🌄','3672729VgGFML'];_0x1f68=function(){return _0xdf2410;};return _0x1f68();}(function(_0x50650f,_0x55a0c3){const _0x381a62=_0x4020,_0x4dc3c8=_0x50650f();while(!![]){try{const _0x334c5f=parseInt(_0x381a62(0x109))/0x1+parseInt(_0x381a62(0x152))/0x2*(parseInt(_0x381a62(0x13e))/0x3)+-parseInt(_0x381a62(0x150))/0x4+parseInt(_0x381a62(0x154))/0x5*(-parseInt(_0x381a62(0x135))/0x6)+-parseInt(_0x381a62(0x157))/0x7+parseInt(_0x381a62(0x10b))/0x8*(-parseInt(_0x381a62(0x141))/0x9)+parseInt(_0x381a62(0x122))/0xa;if(_0x334c5f===_0x55a0c3)break;else _0x4dc3c8['push'](_0x4dc3c8['shift']());}catch(_0x1ffdeb){_0x4dc3c8['push'](_0x4dc3c8['shift']());}}}(_0x1f68,0x392f6));import _0x5dab2a from'moment-timezone';import _0x5f4bdf from'fs';import _0x45b0bc from'os';import _0x3c0e2b from'@whiskeysockets/baileys';const {generateWAMessageFromContent,proto}=_0x3c0e2b;import _0x53e7eb from'../config.cjs';import _0x1a94be from'axios';const totalMemoryBytes=_0x45b0bc[_0x2f4606(0x14d)](),freeMemoryBytes=_0x45b0bc['freemem'](),byteToKB=0x1/0x400,byteToMB=byteToKB/0x400,byteToGB=byteToMB/0x400;function formatBytes(_0x523ea3){const _0x42c4a6=_0x2f4606,_0x290e8d={'fpGHf':function(_0x52ab0c,_0x36188f){return _0x52ab0c+_0x36188f;},'wUjsu':function(_0x115df1,_0x188f97){return _0x115df1*_0x188f97;},'McCnJ':function(_0x449198,_0xe3eb64){return _0x449198>=_0xe3eb64;},'NIRlN':_0x42c4a6(0x11e),'rBkOk':function(_0x3cc2ac,_0x3a673a){return _0x3cc2ac>=_0x3a673a;},'eYtIl':function(_0x408e31,_0x486f17){return _0x408e31+_0x486f17;},'dhFjJ':_0x42c4a6(0x13b)};if(_0x523ea3>=Math[_0x42c4a6(0x12f)](0x400,0x3))return _0x290e8d[_0x42c4a6(0x138)](_0x290e8d['wUjsu'](_0x523ea3,byteToGB)[_0x42c4a6(0x124)](0x2),'\x20GB');else{if(_0x290e8d[_0x42c4a6(0x113)](_0x523ea3,Math['pow'](0x400,0x2)))return _0x290e8d[_0x42c4a6(0x138)]((_0x523ea3*byteToMB)[_0x42c4a6(0x124)](0x2),_0x290e8d['NIRlN']);else return _0x290e8d[_0x42c4a6(0x119)](_0x523ea3,0x400)?(_0x523ea3*byteToKB)[_0x42c4a6(0x124)](0x2)+_0x42c4a6(0x129):_0x290e8d['eYtIl'](_0x523ea3[_0x42c4a6(0x124)](0x2),_0x290e8d[_0x42c4a6(0x12c)]);}}function _0x4020(_0x1a909c,_0x4f9507){const _0x1f68d0=_0x1f68();return _0x4020=function(_0x402036,_0x30f65e){_0x402036=_0x402036-0x108;let _0x750437=_0x1f68d0[_0x402036];return _0x750437;},_0x4020(_0x1a909c,_0x4f9507);}const uptime=process['uptime'](),day=Math['floor'](uptime/(0x18*0xe10)),hours=Math['floor'](uptime%(0x18*0xe10)/0xe10),minutes=Math[_0x2f4606(0x148)](uptime%0xe10/0x3c),seconds=Math['floor'](uptime%0x3c),uptimeMessage=_0x2f4606(0x110)+day+'d\x20'+hours+'h\x20'+minutes+'m\x20'+seconds+'s*',runMessage='*☀️\x20'+day+_0x2f4606(0x126)+hours+_0x2f4606(0x121)+minutes+_0x2f4606(0x13f)+seconds+'\x20Seconds*\x0a',xtime=_0x5dab2a['tz']('Asia/Colombo')[_0x2f4606(0x12b)](_0x2f4606(0x127)),xdate=_0x5dab2a['tz']('Asia/Colombo')[_0x2f4606(0x12b)]('DD/MM/YYYY'),time2=_0x5dab2a()['tz'](_0x2f4606(0x137))[_0x2f4606(0x12b)](_0x2f4606(0x127));let pushwish='';if(time2<_0x2f4606(0x11c))pushwish='Good\x20Morning\x20🌄';else{if(time2<'11:00:00')pushwish=_0x2f4606(0x140);else{if(time2<'15:00:00')pushwish='Good\x20Afternoon\x20🌅';else{if(time2<'18:00:00')pushwish='Good\x20Evening\x20🌃';else time2<'19:00:00'?pushwish=_0x2f4606(0x12a):pushwish='Good\x20Night\x20🌌';}}}const menu=async(_0x45d814,_0x86045a)=>{const _0x4bc741=_0x2f4606,_0x3caa7f={'ynbGI':'arraybuffer','wciUL':'Error\x20fetching\x20menu\x20image\x20from\x20URL,\x20falling\x20back\x20to\x20local\x20image:','DGgoB':'./media/khan.jpg','FPvAG':function(_0x2a3223,_0x94f022){return _0x2a3223!==_0x94f022;},'HYHRw':_0x4bc741(0x147),'jiYOP':'Search\x20Menu','NMUcW':_0x4bc741(0x116),'hOPoc':'*Invalid\x20Reply\x20Please\x20Reply\x20With\x20A\x20Number\x20Between\x201\x20to\x209*','OLoJM':'120363378608564635@newsletter','ilxXh':_0x4bc741(0x112),'LHQBP':'private','uLIJh':'list','YGWKZ':'help','ROqXA':_0x4bc741(0x128),'wrupL':'audio/mp4','vitsO':'messages.upsert'},_0x457cbf=_0x53e7eb[_0x4bc741(0x155)],_0x488412=_0x45d814[_0x4bc741(0x120)]['startsWith'](_0x457cbf)?_0x45d814['body']['slice'](_0x457cbf[_0x4bc741(0x156)])[_0x4bc741(0x153)]('\x20')[0x0]['toLowerCase']():'',_0x256434=_0x53e7eb[_0x4bc741(0x14a)]==='public'?'public':_0x3caa7f['LHQBP'],_0x3550b5=_0x53e7eb[_0x4bc741(0x155)],_0x268d87=[_0x3caa7f['uLIJh'],_0x3caa7f[_0x4bc741(0x142)],_0x4bc741(0x114)];if(_0x268d87[_0x4bc741(0x118)](_0x488412)){const _0x158e51='\x0a╭━━━〔\x20*'+_0x53e7eb['BOT_NAME']+'*\x20〕━━━┈⊷\x0a┃★╭──────────────\x0a┃★│\x20Owner\x20:\x20*'+_0x53e7eb[_0x4bc741(0x146)]+_0x4bc741(0x10c)+_0x45d814['pushName']+_0x4bc741(0x12d)+_0x256434+_0x4bc741(0x144)+_0x45b0bc[_0x4bc741(0x115)]()+'*\x0a┃★│\x20Prefix\x20:\x20['+_0x457cbf+_0x4bc741(0x10d)+pushwish+'\x20*'+_0x45d814[_0x4bc741(0x14c)]+'*!\x0a\x0a╭━━〔\x20*Menu\x20List*\x20〕━━┈⊷\x0a┃◈╭─────────────·๏\x0a┃◈┃•\x201.\x20Download\x20Menu\x20\x20\x20\x20\x20\x20\x0a┃◈┃•\x202.\x20Converter\x20Menu\x20\x20\x20\x20\x20\x20\x20\x20\x0a┃◈┃•\x203.\x20AI\x20Menu\x20\x20\x0a┃◈┃•\x204.\x20Tools\x20Menu\x20\x20\x0a┃◈┃•\x205.\x20Group\x20Menu\x20\x0a┃◈┃•\x206.\x20Search\x20Menu\x20\x20\x20\x0a┃◈┃•\x207.\x20Main\x20Menu\x0a┃◈┃•\x208.\x20Owner\x20Menu\x20\x0a┃◈┃•\x209.\x20Stalk\x20Menu\x20\x20\x20\x20\x20\x0a┃◈┃•\x20\x20.update\x0a┃◈└───────────┈⊷\x0a╰──────────────┈⊷\x0a>\x20*Reply\x20with\x20the\x20number\x20(1-9)*',_0x40ed91=async()=>{const _0x10d613=_0x4bc741;if(_0x53e7eb[_0x10d613(0x13d)]&&_0x53e7eb[_0x10d613(0x13d)]['trim']()!=='')try{const _0x1ad6fb=await _0x1a94be[_0x10d613(0x12e)](_0x53e7eb[_0x10d613(0x13d)],{'responseType':_0x3caa7f['ynbGI']});return Buffer['from'](_0x1ad6fb[_0x10d613(0x134)],_0x10d613(0x13a));}catch(_0x497ea8){return console['error'](_0x3caa7f[_0x10d613(0x125)],_0x497ea8),_0x5f4bdf['readFileSync'](_0x3caa7f[_0x10d613(0x11b)]);}else return _0x5f4bdf['readFileSync'](_0x3caa7f['DGgoB']);},_0x48aa75=await _0x40ed91(),_0x2a1d45=await _0x86045a[_0x4bc741(0x117)](_0x45d814[_0x4bc741(0x145)],{'image':_0x48aa75,'caption':_0x158e51,'contextInfo':{'mentionedJid':[_0x45d814[_0x4bc741(0x14e)]],'forwardingScore':0x3e7,'isForwarded':!![],'forwardedNewsletterMessageInfo':{'newsletterJid':_0x3caa7f['OLoJM'],'newsletterName':_0x3caa7f[_0x4bc741(0x14f)],'serverMessageId':0x8f}}},{'quoted':_0x45d814});await _0x86045a[_0x4bc741(0x117)](_0x45d814['from'],{'audio':{'url':_0x3caa7f['ROqXA']},'mimetype':_0x3caa7f['wrupL'],'ptt':!![]},{'quoted':_0x45d814}),_0x86045a['ev']['on'](_0x3caa7f['vitsO'],async _0x2d82a0=>{const _0x247bce=_0x4bc741,_0xdd6c91=_0x2d82a0['messages'][0x0];if(!_0xdd6c91?.[_0x247bce(0x149)]?.[_0x247bce(0x111)])return;const _0x16e498=_0xdd6c91[_0x247bce(0x149)][_0x247bce(0x111)]['text']['trim']();if(_0x3caa7f['FPvAG'](_0xdd6c91['message']['extendedTextMessage']['contextInfo']?.[_0x247bce(0x11a)],_0x2a1d45['key']['id']))return;let _0x3cc6e2,_0xe72cd3;switch(_0x16e498){case'1':_0xe72cd3='Download\x20Menu',_0x3cc6e2=_0x247bce(0x10f);break;case'2':_0xe72cd3='Converter\x20Menu',_0x3cc6e2=_0x247bce(0x133);break;case'3':_0xe72cd3=_0x247bce(0x143),_0x3cc6e2=_0x247bce(0x14b);break;case'4':_0xe72cd3=_0x247bce(0x13c),_0x3cc6e2='\x0a╭━━〔\x20*Tools\x20Menu*\x20〕━━┈⊷\x0a┃◈╭─────────────·๏\x0a┃◈┃•\x20calculator\x0a┃◈┃•\x20tempmail\x0a┃◈┃•\x20checkmail\x0a┃◈┃•\x20trt\x0a┃◈┃•\x20tts\x0a┃◈└───────────┈⊷\x0a╰──────────────┈⊷';break;case'5':_0xe72cd3=_0x3caa7f[_0x247bce(0x132)],_0x3cc6e2=_0x247bce(0x11f);break;case'6':_0xe72cd3=_0x3caa7f[_0x247bce(0x108)],_0x3cc6e2=_0x247bce(0x139);break;case'7':_0xe72cd3=_0x247bce(0x10e),_0x3cc6e2='\x0a╭━━〔\x20*Main\x20Menu*\x20〕━━┈⊷\x0a┃◈╭─────────────·๏\x0a┃◈┃•\x20ping\x0a┃◈┃•\x20alive\x0a┃◈┃•\x20owner\x0a┃◈┃•\x20menu\x0a┃◈┃•\x20infobot\x0a┃◈└───────────┈⊷\x0a╰──────────────┈⊷';break;case'8':_0xe72cd3=_0x3caa7f['NMUcW'],_0x3cc6e2='\x0a╭━━〔\x20*Owner\x20Menu*\x20〕━━┈⊷\x0a┃◈╭─────────────·๏\x0a┃◈┃•\x20join\x0a┃◈┃•\x20leave\x0a┃◈┃•\x20block\x0a┃◈┃•\x20unblock\x0a┃◈┃•\x20setppbot\x0a┃◈┃•\x20anticall\x0a┃◈┃•\x20setstatus\x0a┃◈┃•\x20setnamebot\x0a┃◈┃•\x20autotyping\x0a┃◈┃•\x20alwaysonline\x0a┃◈┃•\x20autoread\x0a┃◈┃•\x20autosview\x0a┃◈└───────────┈⊷\x0a╰──────────────┈⊷';break;case'9':_0xe72cd3='Stalk\x20Menu',_0x3cc6e2='\x0a╭━━〔\x20*Stalk\x20Menu*\x20〕━━┈⊷\x0a┃◈╭─────────────·๏\x0a┃◈┃•\x20truecaller\x0a┃◈┃•\x20instastalk\x0a┃◈┃•\x20githubstalk\x0a┃◈└───────────┈⊷\x0a╰──────────────┈⊷';break;default:_0xe72cd3=_0x247bce(0x136),_0x3cc6e2=_0x3caa7f[_0x247bce(0x130)];}const _0x12fd9a=_0x247bce(0x131)+_0x53e7eb['BOT_NAME']+_0x247bce(0x151)+_0xe72cd3+'*\x20〕━━━┈⊷\x0a┃★╭──────────────\x0a┃★│•\x20Owner\x20:\x20*'+_0x53e7eb['OWNER_NAME']+'*\x0a┃★│•\x20User\x20:\x20*'+_0x45d814[_0x247bce(0x14c)]+_0x247bce(0x10a)+_0x457cbf+']\x0a┃★│•\x20Version\x20:\x20*3.1.0*\x0a┃★╰──────────────\x0a╰━━━━━━━━━━━━━━━┈⊷\x0a\x0a'+_0x3cc6e2+_0x247bce(0x123)+_0x53e7eb['DESCRIPTION']+'*';await _0x86045a[_0x247bce(0x117)](_0x45d814[_0x247bce(0x145)],{'image':_0x48aa75,'caption':_0x12fd9a,'contextInfo':{'mentionedJid':[_0x45d814[_0x247bce(0x14e)]],'forwardingScore':0x3e7,'isForwarded':!![],'forwardedNewsletterMessageInfo':{'newsletterJid':_0x3caa7f[_0x247bce(0x11d)],'newsletterName':_0x3caa7f['ilxXh'],'serverMessageId':0x8f}}},{'quoted':_0xdd6c91});});}};export default menu;
+// Define unit conversions
+const byteToKB = 1 / 1024;
+const byteToMB = byteToKB / 1024;
+const byteToGB = byteToMB / 1024;
+
+// Function to format bytes to a human-readable format
+function formatBytes(bytes) {
+  if (bytes >= Math.pow(1024, 3)) {
+    return (bytes * byteToGB).toFixed(2) + ' GB';
+  } else if (bytes >= Math.pow(1024, 2)) {
+    return (bytes * byteToMB).toFixed(2) + ' MB';
+  } else if (bytes >= 1024) {
+    return (bytes * byteToKB).toFixed(2) + ' KB';
+  } else {
+    return bytes.toFixed(2) + ' bytes';
+  }
+}
+
+// Bot Process Time
+const uptime = process.uptime();
+const day = Math.floor(uptime / (24 * 3600)); // Calculate days
+const hours = Math.floor((uptime % (24 * 3600)) / 3600); // Calculate hours
+const minutes = Math.floor((uptime % 3600) / 60); // Calculate minutes
+const seconds = Math.floor(uptime % 60); // Calculate seconds
+
+// Uptime
+const uptimeMessage = `*I am alive now since ${day}d ${hours}h ${minutes}m ${seconds}s*`;
+const runMessage = `*☀️ ${day} Day*\n*🕐 ${hours} Hour*\n*⏰ ${minutes} Minutes*\n*⏱️ ${seconds} Seconds*\n`;
+
+const xtime = moment.tz("Asia/Colombo").format("HH:mm:ss");
+const xdate = moment.tz("Asia/Colombo").format("DD/MM/YYYY");
+const time2 = moment().tz("Asia/Colombo").format("HH:mm:ss");
+let pushwish = "";
+
+if (time2 < "05:00:00") {
+  pushwish = `Good Morning 🌄`;
+} else if (time2 < "11:00:00") {
+  pushwish = `Good Morning 🌄`;
+} else if (time2 < "15:00:00") {
+  pushwish = `Good Afternoon 🌅`;
+} else if (time2 < "18:00:00") {
+  pushwish = `Good Evening 🌃`;
+} else if (time2 < "19:00:00") {
+  pushwish = `Good Evening 🌃`;
+} else {
+  pushwish = `Good Night 🌌`;
+}
+
+const menu = async (m, Matrix) => {
+  const prefix = config.PREFIX;
+  const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
+  const mode = config.MODE === 'public' ? 'public' : 'private';
+  const pref = config.PREFIX;
+
+  const validCommands = ['list', 'help', 'menu'];
+
+  if (validCommands.includes(cmd)) {
+    const mainMenu = `
+╭━━━〔 *${config.BOT_NAME}* 〕━━━┈⊷
+┃★╭──────────────
+┃★│ Owner : *${config.OWNER_NAME}*
+┃★│ User : *${m.pushName}*
+┃★│ Baileys : *Multi Device*
+┃★│ Type : *NodeJs*
+┃★│ Mode : *${mode}*
+┃★│ Platform : *${os.platform()}*
+┃★│ Prefix : [${prefix}]
+┃★│ Version : *3.1.0*
+┃★╰──────────────
+╰━━━━━━━━━━━━━━━┈⊷
+
+> ${pushwish} *${m.pushName}*!
+
+╭━━〔 *Menu List* 〕━━┈⊷
+┃◈╭─────────────·๏
+┃◈┃• 1. Download Menu      
+┃◈┃• 2. Converter Menu        
+┃◈┃• 3. AI Menu  
+┃◈┃• 4. Tools Menu  
+┃◈┃• 5. Group Menu 
+┃◈┃• 6. Search Menu   
+┃◈┃• 7. Main Menu
+┃◈┃• 8. Owner Menu 
+┃◈┃• 9. Stalk Menu     
+┃◈┃•  .update
+┃◈└───────────┈⊷
+╰──────────────┈⊷
+> *Reply with the number (1-9)*`;
+
+    // Function to get menu image
+    const getMenuImage = async () => {
+      if (config.MENU_IMAGE && config.MENU_IMAGE.trim() !== '') {
+        try {
+          const response = await axios.get(config.MENU_IMAGE, { responseType: 'arraybuffer' });
+          return Buffer.from(response.data, 'binary');
+        } catch (error) {
+          console.error('Error fetching menu image from URL, falling back to local image:', error);
+          return fs.readFileSync('./media/khan.jpg');
+        }
+      } else {
+        return fs.readFileSync('./media/khan.jpg');
+      }
+    };
+
+    const menuImage = await getMenuImage();
+
+    const sentMessage = await Matrix.sendMessage(m.from, {
+      image: menuImage,
+      caption: mainMenu,
+      contextInfo: {
+        mentionedJid: [m.sender],
+        forwardingScore: 999,
+        isForwarded: true,
+        forwardedNewsletterMessageInfo: {
+          newsletterJid: '120363378608564635@newsletter',
+          newsletterName: "CRISS AI SUPPORT",
+          serverMessageId: 143
+        }
+      }
+    }, {
+      quoted: m
+    });
+
+    // Send audio after sending the menu
+    await Matrix.sendMessage(m.from, {
+      audio: { url: 'https://github.com/XdTechPro/KHAN-DATA/raw/refs/heads/main/autovoice/menunew.m4a' },
+      mimetype: 'audio/mp4',
+      ptt: true
+    }, { quoted: m });
+
+    // Set up listener for menu selection
+    Matrix.ev.on('messages.upsert', async (event) => {
+      const receivedMessage = event.messages[0];
+      if (!receivedMessage?.message?.extendedTextMessage) return;
+
+      const receivedText = receivedMessage.message.extendedTextMessage.text.trim();
+      if (receivedMessage.message.extendedTextMessage.contextInfo?.stanzaId !== sentMessage.key.id) return;
+
+      let menuResponse;
+      let menuTitle;
+      
+      switch (receivedText) {
+        case "1":
+          menuTitle = "Download Menu";
+          menuResponse = `
+╭━━〔 *Download Menu* 〕━━┈⊷
+┃◈╭─────────────·๏
+┃◈┃• apk
+┃◈┃• facebook
+┃◈┃• mediafire
+┃◈┃• pinterestdl
+┃◈┃• gitclone
+┃◈┃• gdrive
+┃◈┃• insta
+┃◈┃• ytmp3
+┃◈┃• ytmp4
+┃◈┃• play
+┃◈┃• song
+┃◈┃• video
+┃◈┃• ytmp3doc
+┃◈┃• ytmp4doc
+┃◈┃• tiktok
+┃◈└───────────┈⊷
+╰──────────────┈⊷`;
+          break;
+          
+        case "2":
+          menuTitle = "Converter Menu";
+          menuResponse = `
+╭━━〔 *Converter Menu* 〕━━┈⊷
+┃◈╭─────────────·๏
+┃◈┃• attp
+┃◈┃• attp2
+┃◈┃• attp3
+┃◈┃• ebinary
+┃◈┃• dbinary
+┃◈┃• emojimix
+┃◈┃• mp3
+┃◈└───────────┈⊷
+╰──────────────┈⊷`;
+          break;
+          
+        case "3":
+          menuTitle = "AI Menu";
+          menuResponse = `
+╭━━〔 *AI Menu* 〕━━┈⊷
+┃◈╭─────────────·๏
+┃◈┃• ai
+┃◈┃• bug
+┃◈┃• report
+┃◈┃• gpt
+┃◈┃• dalle
+┃◈┃• remini
+┃◈┃• gemini
+┃◈└───────────┈⊷
+╰──────────────┈⊷`;
+          break;
+          
+        case "4":
+          menuTitle = "Tools Menu";
+          menuResponse = `
+╭━━〔 *Tools Menu* 〕━━┈⊷
+┃◈╭─────────────·๏
+┃◈┃• calculator
+┃◈┃• tempmail
+┃◈┃• checkmail
+┃◈┃• trt
+┃◈┃• tts
+┃◈└───────────┈⊷
+╰──────────────┈⊷`;
+          break;
+          
+        case "5":
+          menuTitle = "Group Menu";
+          menuResponse = `
+╭━━〔 *Group Menu* 〕━━┈⊷
+┃◈╭─────────────·๏
+┃◈┃• linkgroup
+┃◈┃• setppgc
+┃◈┃• setname
+┃◈┃• setdesc
+┃◈┃• group
+┃◈┃• gcsetting
+┃◈┃• welcome
+┃◈┃• add
+┃◈┃• kick
+┃◈┃• hidetag
+┃◈┃• tagall
+┃◈┃• antilink
+┃◈┃• antitoxic
+┃◈┃• promote
+┃◈┃• demote
+┃◈┃• getbio
+┃◈└───────────┈⊷
+╰──────────────┈⊷`;
+          break;
+          
+        case "6":
+          menuTitle = "Search Menu";
+          menuResponse = `
+╭━━〔 *Search Menu* 〕━━┈⊷
+┃◈╭─────────────·๏
+┃◈┃• play
+┃◈┃• yts
+┃◈┃• imdb
+┃◈┃• google
+┃◈┃• gimage
+┃◈┃• pinterest
+┃◈┃• wallpaper
+┃◈┃• wikimedia
+┃◈┃• ytsearch
+┃◈┃• ringtone
+┃◈┃• lyrics
+┃◈└───────────┈⊷
+╰──────────────┈⊷`;
+          break;
+          
+        case "7":
+          menuTitle = "Main Menu";
+          menuResponse = `
+╭━━〔 *Main Menu* 〕━━┈⊷
+┃◈╭─────────────·๏
+┃◈┃• ping
+┃◈┃• alive
+┃◈┃• owner
+┃◈┃• menu
+┃◈┃• infobot
+┃◈└───────────┈⊷
+╰──────────────┈⊷`;
+          break;
+          
+        case "8":
+          menuTitle = "Owner Menu";
+          menuResponse = `
+╭━━〔 *Owner Menu* 〕━━┈⊷
+┃◈╭─────────────·๏
+┃◈┃• join
+┃◈┃• leave
+┃◈┃• block
+┃◈┃• unblock
+┃◈┃• setppbot
+┃◈┃• anticall
+┃◈┃• setstatus
+┃◈┃• setnamebot
+┃◈┃• autotyping
+┃◈┃• alwaysonline
+┃◈┃• autoread
+┃◈┃• autosview
+┃◈└───────────┈⊷
+╰──────────────┈⊷`;
+          break;
+          
+        case "9":
+          menuTitle = "Stalk Menu";
+          menuResponse = `
+╭━━〔 *Stalk Menu* 〕━━┈⊷
+┃◈╭─────────────·๏
+┃◈┃• truecaller
+┃◈┃• instastalk
+┃◈┃• githubstalk
+┃◈└───────────┈⊷
+╰──────────────┈⊷`;
+          break;
+          
+        default:
+          menuTitle = "Invalid Choice";
+          menuResponse = "*Invalid Reply Please Reply With A Number Between 1 to 9*";
+      }
+
+      // Format the full response with title and description
+      const fullResponse = `
+╭━━━〔 *${config.BOT_NAME} - ${menuTitle}* 〕━━━┈⊷
+┃★╭──────────────
+┃★│• Owner : *${config.OWNER_NAME}*
+┃★│• User : *${m.pushName}*
+┃★│• Prefix : [${prefix}]
+┃★│• Version : *3.1.0*
+┃★╰──────────────
+╰━━━━━━━━━━━━━━━┈⊷
+
+${menuResponse}
+
+> *${config.DESCRIPTION}*`;
+
+      // Send the response with image and context info
+      await Matrix.sendMessage(m.from, {
+        image: menuImage,
+        caption: fullResponse,
+        contextInfo: {
+          mentionedJid: [m.sender],
+          forwardingScore: 999,
+          isForwarded: true,
+          forwardedNewsletterMessageInfo: {
+            newsletterJid: '120363378608564635@newsletter',
+            newsletterName: "CRISS AI SUPPORT",
+            serverMessageId: 143
+          }
+        }
+      }, {
+        quoted: receivedMessage
+      });
+    });
+  }
+};
+
+export default menu;
