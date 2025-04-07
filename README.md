@@ -16,7 +16,7 @@
       Fast Fork and star and get you session ld press Heroku deploy you bot.
       <br><br>
       <a href="https://github.com/criss-vevo/CRISS-AI/fork">
-        <img src="https://img.shields.io/badge/FORK-purple" alt="FORK CRISS-AI" height="50" width="100">
+        <img src="https://img.shields.io/badge/FORK-purple" alt="FORK CRISS-AI"width="60">
       </a>
     </td>
     <td align="center">
