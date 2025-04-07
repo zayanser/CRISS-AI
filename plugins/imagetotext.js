@@ -1,44 +1,48 @@
-import Tesseract from 'tesseract.js';
-import { writeFile, unlink } from 'fs/promises';
-import config from '../config.cjs';
+import axios from 'axios';
+import config from '../../config.cjs';
+global.nex_key = 'https://api.nexoracle.com';
+global.nex_api = 'free_key@maher_apis';
 
-const givetextCommand = async (m, Matrix) => {
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+const imageCommand = async (m, sock) => {
   const prefix = config.PREFIX;
-const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
-const arg = m.body.slice(prefix.length + cmd.length).trim();
+  const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
+  let query = m.body.slice(prefix.length + cmd.length).trim();
 
-  const validCommands = ['givetext', 'extract'];
+  const validCommands = ['image', 'img', 'gimage'];
 
   if (validCommands.includes(cmd)) {
-    if (!m.quoted || m.quoted.mtype !== 'imageMessage') {
-      return m.reply(`Send/Reply with an image to extract text ${prefix + cmd}`);
+    if (!query && !(m.quoted && m.quoted.text)) {
+      return sock.sendMessage(m.from, { text: `Please provide some text, Example usage: ${prefix + cmd} black cats` });
     }
 
-    let lang = 'eng'; 
-    if (args.length > 0) {
-      lang = args[0]; 
+    if (!query && m.quoted && m.quoted.text) {
+      query = m.quoted.text;
     }
 
     try {
-      const media = await m.quoted.download(); 
-      if (!media) throw new Error('Failed to download media.');
+      await sock.sendMessage(m.from, { text: '*Please wait*' });
 
-      const filePath = `./${Date.now()}.png`;
-      await writeFile(filePath, media);
+      const endpoint = `${global.nex_key}/search/google-image?apikey=${global.nex_api}&q=${encodeURIComponent(query)}`;
+      const response = await axios.get(endpoint);
 
-      const { data: { text } } = await Tesseract.recognize(filePath, lang, {
-        logger: m => console.log(m)
-      });
+      if (response.status === 200 && response.data.result && response.data.result.length > 0) {
+        const images = response.data.result.slice(0, 5); // Limit to 5 images
 
-      const responseMessage = `Extracted Text:\n\n${text}`;
-      await Matrix.sendMessage(m.from, { text: responseMessage }, { quoted: m }); 
-
-      await unlink(filePath); 
+        for (let i = 0; i < images.length; i++) {
+          await sleep(500);
+          await sock.sendMessage(m.from, { image: { url: images[i] }, caption: '' }, { quoted: m });
+        }
+        await m.React("✅");
+      } else {
+        throw new Error('No images found');
+      }
     } catch (error) {
-      console.error("Error extracting text from image:", error);
-      await Matrix.sendMessage(m.from, { text: 'Error extracting text from image.' }, { quoted: m }); 
+      console.error("Error fetching images:", error);
+      await sock.sendMessage(m.from, { text: `*Oops! Something went wrong while generating images. Please try again later.*\n\nError: ${error}` });
     }
   }
 };
 
-export default givetextCommand;
+export default imageCommand;
