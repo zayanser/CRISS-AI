@@ -1,40 +1,62 @@
-   𝗖𝗥𝗜𝗦𝗦 𝗔𝗜 𝗠𝗨𝗟𝗧𝗜 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 𝗕𝗢𝗧
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a><a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 
-<p align="left">
-  <a href="https://github.com/criss-vevo">
-    <img alt="criss-vevo logo" height="300" width="300" src="https://files.catbox.moe/gs8gi2.jpg">
+
+ᴄʟɪᴄᴋ ᴡᴀ ʟᴏɢᴏ ᴛᴏ ᴊᴏɪɴ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ 👇 
+<br> [![join](https://github.com/Alien-alfa/PublicBot/blob/main/wlogo.svg.png)](https://whatsapp.com/channel/0029Vb0HIV2G3R3s2II4181g)
+  <div align="center"  >
+<h4 align="center">Plugins</h1>
+
+---
+
   </a>
+  <hr style="margin-top: 20px; margin-bottom: 20px;"/>
+</div>
+
+<table align="center" cellpadding="10" border="1">
+  <tr>
+    <td align="center">
+      <b>FORK</b><br>
+      Fast Fork and star and get you session ld press Heroku deploy you bot.
+      <br><br>
+      <a href="https://github.com/criss-vevo/CRISS-AI/fork">
+        <img src="https://img.shields.io/badge/FORK-purple" alt="FORK NJABULOJ" width="150">
+      </a>
+    </td>
+    <td align="center">
+      <b>SESSION</b><br>
+      Link your session ID to start using the bot. Follow steps if issues arise.
+      <br><br>
+      <a href="https://shorturl.at/WYHGS">
+        <img src="https://img.shields.io/badge/Pair%20session%20code-white" alt="𝐏𝐚𝐢𝐫%20𝐬𝐞𝐬𝐬𝐢𝐨𝐧%20𝐜𝐨𝐝𝐞" width="300">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <b>DEPLOY CRISS AI</b><br>
+      ᴅᴇᴘʟᴏʏ ᴛʜᴇ ʙᴏᴛ ᴜsᴇ ɴᴏʀᴍᴀʟ ʙᴏᴛ ᴏɴ ʜᴇʀᴏᴋᴜ ᴡᴏʀᴋɪɴɢ 100% ɴᴏ ʙᴀɴɴᴇᴅ ʜᴇʀᴏᴋᴜ ᴀɴᴅ ᴡʜᴀᴛsᴀᴘᴘ ᴛᴀɴᴋs ʏᴏᴜ ᴇɴᴊᴏʏ.
+      <br><br>
+      <a href="https://dashboard.heroku.com/new?button-url=https://github.com/criss-vevo/CRISS-AI&template=https://github.com/criss-vevo/CRISS-AI.git">
+        <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku">
+      </a>
+    </td>
+    <td align="center">
+      <b>DEPLOY CRISS-AI</b><br>
+      ᴅᴇᴘʟᴏʏ ᴛʜᴇ ʙᴏᴛ ᴜsᴇ ɴᴏʀᴍᴀʟ ʙᴏᴛ ᴏɴ ʜᴇʀᴏᴋᴜ ᴡᴏʀᴋɪɴɢ 100% ɴᴏ ʙᴀɴɴᴇᴅ ʜᴇʀᴏᴋᴜ ᴀɴᴅ ᴡʜᴀᴛsᴀᴘᴘ ᴛᴀɴᴋs ʏᴏᴜ ᴇɴᴊᴏʏ.
+      <br><br>
+      <a href="https://dashboard.heroku.com/new?button-url= https://github.com/criss-vevo/CRISS-AI&template=https://github.com/criss-vevo/CRISS-AI.git">
+        <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku">
+      </a>
+    </td>
+  </tr>
+</table>
+
+
+<div align="center" id="top">
+  <img src="https://profile-readme-generator.com/assets/app.png" width="900" alt="Profile Readme Generator" />
+
+  <a href="https://profile-readme-generator.com">NjabuloJ</a>
+</div>
+
+<p align="center">
+<i>Loved the tool? Please consider <a href="https://www.paypal.com/NjabuloJ/?hosted_button_id=FR3A2DGVYKGJS">NjabuloJ 💸</a> to support its continuous<br/> improvement and development!</i>
 </p>
-
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a><a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
-
-
-#### SETUP 
-
-
-
-<a href="https://github.com/criss-vevo/CRISS-AI/fork"><img src="https://img.shields.io/badge/Fork-white" alt="𝐅𝐨𝐫𝐤" width="100"></a>
-
-
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a><a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
-
- 
-<a href="https://shorturl.at/WYHGS"><img src="https://img.shields.io/badge/Pair%20session%20code-white" alt="𝐏𝐚𝐢𝐫 𝐬𝐞𝐬𝐬𝐢𝐨𝐧 𝐜𝐨𝐝𝐞" width="300"></a>
-
-
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a><a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
-
-
- <a href="https://dashboard.heroku.com/new?template=https://github.com/criss-vevo/CRISS-AI"><img title="DEPLOY-ON HEROKU" src="https://img.shields.io/badge/DEPLOY%20ON%20HEROKU-white" alt="Heroku" width="300"></a>
-
-  
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a><a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
-
-
-  
-
-[![JOIN WHATSAPP GROUP](https://raw.githubusercontent.com/Neeraj-x0/Neeraj-x0/main/photos/suddidina-join-whatsapp.png)](https://whatsapp.com/channel/0029Vb0HIV2G3R3s2II4181g)
-
- 
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a><a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
