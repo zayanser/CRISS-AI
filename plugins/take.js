@@ -1,39 +1,37 @@
-import fs from 'fs-extra';
-import config from '../config.cjs';
+import fs from 'fs/promises';
 
-const handleTakeCommand = async (m, gss) => {
-  const prefix = config.PREFIX;
+const takeCommand = async (m, gss) => {
+  const prefixMatch = m.body.match(/^[\\/!#.]/);
+  const prefix = prefixMatch ? prefixMatch[0] : '/';
   const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
-  const text = m.body.slice(prefix.length + cmd.length).trim();
 
-  if (cmd !== 'take') return;
+  const validCommands = ['take', 't', 'steal'];
 
-  // Split text into packname and author
-  const args = text.split('|');
-  const [providedPackname, providedAuthor] = args;
+  if (validCommands.includes(cmd)) {
+    // Check if the message is a sticker
+    if (!m.quoted || m.quoted.mtype !== 'stickerMessage') {
+      return m.reply(`Reply to a sticker to change its pack name!`);
+    }
 
-  if (!providedPackname || !providedAuthor) {
-    return m.reply('Usage: /take pkgname|author');
-  }
+    try {
+      // Download the sticker
+      const stickerBuffer = await m.quoted.download();
+      if (!stickerBuffer) throw new Error('Failed to download sticker.');
 
-  global.packname = providedPackname;
-  global.author = providedAuthor;
+      // Define a new pack name
+      const packname = "pushName";  // This can be dynamic or set based on other variables
 
-  const quoted = m.quoted || {};
+      // Send the sticker with the new pack name
+      await gss.sendSticker(m.from, stickerBuffer, m, { packname: packname });
 
-  if (!['imageMessage', 'videoMessage', 'stickerMessage'].includes(quoted.mtype)) {
-    return m.reply(`Send/Reply with an image or video to use ${prefix + cmd}`);
-  }
+      // Notify the user that the pack name has been changed
+      await m.reply(`The sticker's pack name has been changed to: ${packname}`);
 
-  try {
-    const mediaBuffer = await quoted.download();
-    if (!mediaBuffer) throw new Error('Failed to download media.');
-
-    await gss.sendImageAsSticker(m.from, mediaBuffer, m, { packname: global.packname, author: global.author });
-    m.reply('Sticker created successfully!');
-  } catch (error) {
-    m.reply(`Error: ${error.message}`);
+    } catch (error) {
+      console.error("Error changing sticker pack name:", error);
+      await m.reply('Error changing the sticker pack name.');
+    }
   }
 };
-
-export default handleTakeCommand;
+// codes by lord joel 
+export default takeCommand;
