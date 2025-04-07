@@ -38,7 +38,7 @@
     },
     "ANTI_DELETE_PATH": {
       "description": "make it true for use anti delete",
-      "required": true,
+      "required": false,
       "value": "true"
     },
     
