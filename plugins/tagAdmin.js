@@ -57,7 +57,7 @@ const tagAdmins = async (m, gss) => {
     // Only allow 'tagadmin' command
     if (cmd !== 'tagadmin') return;
 
-    if (!m.isGroup) return m.reply("*ʝσєℓ χ∂ ν тняєє ѕαуѕ ιт ιѕ α gяσυρ ¢σммαη∂*");
+    if (!m.isGroup) return m.reply("*criss ai тняєє ѕαуѕ ιт ιѕ α gяσυρ ¢σммαη∂*");
 
     const groupMetadata = await gss.groupMetadata(m.from);
     const participants = groupMetadata.participants;
