@@ -10,13 +10,13 @@ const tagNotAdmin = async (m, gss) => {
     // Only allow 'tagnotadmin' command
     if (cmd !== 'tagnotadmin') return;
 
-    if (!m.isGroup) return m.reply("*ʝσєℓ χ∂ ν тняєє ѕαуѕ ιт ιѕ α gяσυρ ¢σммαη∂*");
+    if (!m.isGroup) return m.reply("*criss ai  тняєє ѕαуѕ ιт ιѕ α gяσυρ ¢σммαη∂*");
 
     const groupMetadata = await gss.groupMetadata(m.from);
     const participants = groupMetadata.participants;
     const botAdmin = participants.find(p => p.id === botNumber)?.admin;
 
-    if (!botAdmin) return m.reply("*ʝσєℓ χ∂ ν тняєє мυѕт вє α∂мιη тσ υѕє тнιѕ ¢σммαη∂*");
+    if (!botAdmin) return m.reply("*criss ai тняєє мυѕт вє α∂мιη тσ υѕє тнιѕ ¢σммαη∂*");
 
     // Extract the message to be sent
     let message = `乂 *Attention Non-Admins* 乂\n\n*Message:* ${text || 'no message'}\n\n`;
