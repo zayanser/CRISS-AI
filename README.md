@@ -18,7 +18,7 @@
       Fast Fork and star and get you session ld press Heroku deploy you bot.
       <br><br>
       <a href="https://github.com/criss-vevo/CRISS-AI/fork">
-        <img src="https://img.shields.io/badge/FORK-purple" alt="FORK NJABULOJ" width="150">
+        <img src="https://img.shields.io/badge/FORK-purple" alt="FORK NJABULOJ" width="100">
       </a>
     </td>
     <td align="center">
@@ -54,9 +54,9 @@
 <div align="center" id="top">
   <img src="https://profile-readme-generator.com/assets/app.png" width="900" alt="Profile Readme Generator" />
 
-  <a href="https://profile-readme-generator.com">NjabuloJ</a>
+  <a href="https://profile-readme-generator.com">criss-vevo</a>
 </div>
 
 <p align="center">
-<i>Loved the tool? Please consider <a href="https://www.paypal.com/NjabuloJ/?hosted_button_id=FR3A2DGVYKGJS">NjabuloJ 💸</a> to support its continuous<br/> improvement and development!</i>
+<i>Loved the tool? Please consider <a href="https://www.paypal.com/criss-vevo/?hosted_button_id=FR3A2DGVYKGJS">criss-vevo 💸</a> to support its continuous<br/> improvement and development!</i>
 </p>
