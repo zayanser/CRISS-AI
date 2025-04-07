@@ -1,6 +1,4 @@
-
-
-ᴄʟɪᴄᴋ ᴡᴀ ʟᴏɢᴏ ᴛᴏ ᴊᴏɪɴ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ 👇 
+ᴛʜᴀɴᴋs ғᴏʀ ᴄʜᴏᴏsɪɴɢ ᴄʀɪss ᴀɪ ᴄʟɪᴄᴋ ᴡᴀ ʟᴏɢᴏ ᴛᴏ ᴊᴏɪɴ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ 👇 
 <br> [![join](https://github.com/Alien-alfa/PublicBot/blob/main/wlogo.svg.png)](https://whatsapp.com/channel/0029Vb0HIV2G3R3s2II4181g)
   <div align="center"  >
 <h4 align="center">Plugins</h1>
@@ -18,7 +16,7 @@
       Fast Fork and star and get you session ld press Heroku deploy you bot.
       <br><br>
       <a href="https://github.com/criss-vevo/CRISS-AI/fork">
-        <img src="https://img.shields.io/badge/FORK-purple" alt="FORK NJABULOJ" width="100">
+        <img src="https://img.shields.io/badge/FORK-purple" alt="FORK CRISS-AI" height="50" width="100">
       </a>
     </td>
     <td align="center">
