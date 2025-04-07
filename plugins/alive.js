@@ -1,3 +1,108 @@
+import moment from 'moment-timezone';
+import fs from 'fs';
+import os from 'os';
+import pkg, { prepareWAMessageMedia } from '@whiskeysockets/baileys';
+const { generateWAMessageFromContent, proto } = pkg;
+import config from '../../config.cjs';
 
-// created by criss vevo
-(function(_0x542c51,_0x43109a){const _0x469905=_0x46c4,_0x873213=_0x542c51();while(!![]){try{const _0x287962=parseInt(_0x469905(0x191))/0x1*(-parseInt(_0x469905(0x1a2))/0x2)+parseInt(_0x469905(0x18d))/0x3*(-parseInt(_0x469905(0x198))/0x4)+-parseInt(_0x469905(0x18a))/0x5*(parseInt(_0x469905(0x194))/0x6)+parseInt(_0x469905(0x193))/0x7+-parseInt(_0x469905(0x18b))/0x8+parseInt(_0x469905(0x19b))/0x9*(-parseInt(_0x469905(0x1a1))/0xa)+-parseInt(_0x469905(0x195))/0xb*(-parseInt(_0x469905(0x19f))/0xc);if(_0x287962===_0x43109a)break;else _0x873213['push'](_0x873213['shift']());}catch(_0x4084d4){_0x873213['push'](_0x873213['shift']());}}}(_0x5b69,0x68bd0));function _0x46c4(_0x4d9508,_0x3dc05d){const _0x5b69a2=_0x5b69();return _0x46c4=function(_0x46c41a,_0x138887){_0x46c41a=_0x46c41a-0x189;let _0x54a6fe=_0x5b69a2[_0x46c41a];return _0x54a6fe;},_0x46c4(_0x4d9508,_0x3dc05d);}import _0x1fd8f9 from'fs';import _0xc2f21c from'../config.cjs';function _0x5b69(){const _0x42690b=['injvo','59928YCZsgU','CRISS\x20AI\x20SUPPORT','50rbmfKb','128bFovNQ','startsWith','toLowerCase','120363378608564635@newsletter','20VLWpvR','4535752VvDVJi','*🤖\x20Bot\x20Status:\x20Online*\x0a*⏳\x20Uptime:\x20','4359oZDDDO','WbFVG','length','alive','1854rcQDbf','uptime','5172587omBeQk','969282oPMjJs','2497EELeFG','sender','qAdAG','64oopuGR','floor','Jsoaq','159318siYhtx','slice','body'];_0x5b69=function(){return _0x42690b;};return _0x5b69();}const alive=async(_0xca75c9,_0x87d3e1)=>{const _0x5ed844=_0x46c4,_0x550d88={'WbFVG':function(_0xbcfc,_0x277139){return _0xbcfc/_0x277139;},'Jsoaq':function(_0x972009,_0x267d7d){return _0x972009*_0x267d7d;},'injvo':function(_0x3bcef7,_0x383a0e){return _0x3bcef7%_0x383a0e;},'zTWox':_0x5ed844(0x190),'qAdAG':'runtime','wGeoi':'./media/khan.jpg'},_0x4dd846=process[_0x5ed844(0x192)](),_0x46deeb=Math['floor'](_0x550d88[_0x5ed844(0x18e)](_0x4dd846,0xe10*0x18)),_0x5ea9ba=Math[_0x5ed844(0x199)](_0x550d88[_0x5ed844(0x18e)](_0x4dd846%_0x550d88[_0x5ed844(0x19a)](0xe10,0x18),0xe10)),_0x2e8f1d=Math[_0x5ed844(0x199)](_0x550d88[_0x5ed844(0x19e)](_0x4dd846,0xe10)/0x3c),_0x4435d7=Math[_0x5ed844(0x199)](_0x4dd846%0x3c),_0x12e683=_0x46deeb+'d\x20'+_0x5ea9ba+'h\x20'+_0x2e8f1d+'m\x20'+_0x4435d7+'s',_0x39aa66=_0xc2f21c['PREFIX'],_0x4b110a=_0xca75c9[_0x5ed844(0x19d)][_0x5ed844(0x1a3)](_0x39aa66)?_0xca75c9['body'][_0x5ed844(0x19c)](_0x39aa66[_0x5ed844(0x18f)])['split']('\x20')[0x0][_0x5ed844(0x1a4)]():'';if(![_0x550d88['zTWox'],'uptime',_0x550d88[_0x5ed844(0x197)]]['includes'](_0x4b110a))return;const _0x2e14a3=_0x5ed844(0x18c)+_0x12e683+'*';await _0x87d3e1['sendMessage'](_0xca75c9['from'],{'image':_0x1fd8f9['readFileSync'](_0x550d88['wGeoi']),'caption':_0x2e14a3,'contextInfo':{'mentionedJid':[_0xca75c9[_0x5ed844(0x196)]],'forwardingScore':0x3e7,'isForwarded':!![],'forwardedNewsletterMessageInfo':{'newsletterJid':_0x5ed844(0x189),'newsletterName':_0x5ed844(0x1a0),'serverMessageId':0x8f}}},{'quoted':_0xca75c9});};export default alive;
+const joel = async (m, sock) => {
+  const prefix = config.PREFIX;
+  const mode = config.MODE;
+  const pushName = m.pushName || 'User';
+
+  const cmd = m.body.startsWith(prefix)
+    ? m.body.slice(prefix.length).split(' ')[0].toLowerCase()
+    : '';
+
+   if (cmd === "uptime" || cmd === "alive" || cmd === "runtime") {
+    await m.React('⏳'); // Loading reaction
+     
+    // Calculate uptime
+
+    const uptimeSeconds = process.uptime();
+    const days = Math.floor(uptimeSeconds / (24 * 3600));
+    const hours = Math.floor((uptimeSeconds % (24 * 3600)) / 3600);
+    const minutes = Math.floor((uptimeSeconds % 3600) / 60);
+    const seconds = Math.floor(uptimeSeconds % 60);
+
+    
+    // Get real time
+    const realTime = moment().tz("Tanzania/Dodoma").format("HH:mm:ss");
+    const xtime = moment.tz("Tanzania/Dodoma").format("HH:mm:ss");
+    const xdate = moment.tz("Tanzania/Dodoma").format("DD/MM/YYYY");
+    const time2 = moment().tz("Tanzania/Dodoma").format("HH:mm:ss");
+let pushwish = "";
+
+if (time2 < "05:00:00") {
+  pushwish = `Good Morning 🌄`;
+} else if (time2 < "11:00:00") {
+  pushwish = `Good Morning 🌄`;
+} else if (time2 < "15:00:00") {
+  pushwish = `Good Afternoon 🌅`;
+} else if (time2 < "18:00:00") {
+  pushwish = `Good Evening 🌃`;
+} else if (time2 < "19:00:00") {
+  pushwish = `Good Evening 🌃`;
+} else {
+  pushwish = `Good Night 🌌`;
+}
+
+    const aliveMessage = `*CODES BY JOEL XMD*
+    *---------------------`;
+
+    await m.React('☄️'); // React with a success icon
+    
+    sock.sendMessage(
+      m.from,
+      {
+            audio: { url: 'https://github.com/joeljamestech2/JOEL-XMD/raw/refs/heads/main/mydata/media/alive.mp3' },
+            mimetype: 'audio/mp4',
+            ptt: true,
+            contextInfo: { 
+                mentionedJid: [m.sender],
+                forwardingScore: 999,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363317462952356@newsletter',
+                    newsletterName: 'ᴊᴏᴇʟ xᴅ ʙᴏᴛ ᴠ ⁷',
+                    serverMessageId: 143
+            },
+            forwardingScore: 999, // Score to indicate it has been forwarded
+            externalAdReply: {
+            title: "ᴘᴏᴡᴇʀᴇᴅ ʙʏ ʟᴏʀᴅ ᴊᴏᴇʟ",
+            body: `UPTIME ${days}D ${hours}H ${minutes}M ${seconds}S`,
+            thumbnailUrl: 'https://raw.githubusercontent.com/joeljamestech2/JOEL-XMD/refs/heads/main/mydata/media/alive.jpg', // Add thumbnail URL if required
+            sourceUrl: 'https://whatsapp.com/channel/0029Vak2PevK0IBh2pKJPp2K', // Add source URL if necessary
+            mediaType: 1,
+            renderLargerThumbnail: true,
+          },
+        },
+      },
+      { quoted: m }
+    );
+  }
+};
+
+export default joel;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
